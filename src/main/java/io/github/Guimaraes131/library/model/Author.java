@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -21,4 +22,7 @@ public class Author {
     private LocalDate birthDate;
 
     private String nationality;
+
+    @OneToMany(mappedBy = "author")
+    private List<Book> books;
 }
